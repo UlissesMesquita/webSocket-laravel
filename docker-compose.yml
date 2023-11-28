@@ -3,7 +3,7 @@ services:
   web:
     restart: always
     build: .
-    container_name: phone-web
+    container_name: api-web
     volumes: 
       - ./:/var/www/
     depends_on: 
@@ -14,7 +14,7 @@ services:
   db:
     image: postgres
     restart: always
-    container_name: phone-db
+    container_name: api-db
     ports:
       - "5544:5432"
     environment:
@@ -29,9 +29,9 @@ services:
   nginx:
     build: ./.docker/nginx
     restart: always
-    container_name: phone-nginx
+    container_name: api-nginx
     ports:
-      - "9155:80"
+      - "9200:80"
     volumes: 
       - ./:/var/www
     depends_on: 
