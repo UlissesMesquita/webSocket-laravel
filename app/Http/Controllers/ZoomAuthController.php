@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\ZoomAuth;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
 
@@ -13,7 +12,7 @@ class ZoomAuthController extends Controller
     protected $clientId;
     protected $clientSecret;
     protected $secretToken;
-    protected $accessToken;
+    private $accessToken;
     protected $refreshToken;
 
     protected $pathV2;
