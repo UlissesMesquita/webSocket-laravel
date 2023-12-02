@@ -1,9 +1,8 @@
 <?php
 
 use App\Http\Controllers\ZoomAuthController;
-use App\Http\Controllers\ZoomWebhookController;
-use App\Http\Controllers\ZoomWebSocket;
-use App\Models\ZoomWebhook;
+use App\Http\Controllers\ZoomWebSocketController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +28,5 @@ Route::prefix('/zoom/token')->group(function () {
 
 });
 
-Route::post('/webhook', [ZoomWebhookController::class, 'receiverWebhookZoom']);
+Route::post('/websocket', [ZoomWebSocketController::class, 'authWebsocketConfig']);
 
